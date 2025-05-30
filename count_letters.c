@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main()
+int main(void)
 {
     char chaine[150];
     int Voyelles=0,Consonnes=0; 
