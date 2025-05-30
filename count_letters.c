@@ -8,11 +8,15 @@ int main() {
     char c;
 
     // lit toute la ligne jusqu'au retour à la ligne
-    scanf("%[^\n]", str); 
+    fgets(str, sizeof(str), stdin); 
 
     while (str[i] != '\0') {
         c = str[i];
 
+        if (c == '\n') {
+            str[i] = '\0';
+            break;
+        }
         // Convertir manuellement en minuscule si besoin
         if (c >= 'A' && c <= 'Z') {
             c = c + 32;
