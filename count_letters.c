@@ -2,9 +2,11 @@
 #include <ctype.h>
 
 int main() {
-    char str[] = "Hello Codeloccol!";
+    char str[1000];
     int voyelles = 0, consonnes = 0;
     char c;
+
+    fgets(str, sizeof(str), stdin);
 
     for (int i = 0; str[i] != '\0'; i++) {
         c = tolower(str[i]);
