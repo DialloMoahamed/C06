@@ -23,7 +23,7 @@ int main()
         
     }
 
-    printf("Voyelles : %d\nConsonnes : %d",Voyelles, Consonnes);
+    printf("Voyelles : %d\nConsonnes : %d\n",Voyelles, Consonnes);
     
     return 0;
 }
