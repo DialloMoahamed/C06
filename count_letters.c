@@ -35,8 +35,8 @@ int main() {
         i++;
     }
 
-    printf("Voyelles : %d\n", voyelles);
-    printf("Consonnes : %d\n", consonnes);
+    printf("Nombre de voyelles : %d\n", voyelles);
+    printf("Nombre de consonnes : %d\n", consonnes);
 
     return 0;
 }
