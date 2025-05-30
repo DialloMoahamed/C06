@@ -5,7 +5,7 @@
 int main()
 {
     char chaine[150];
-    int Voyelles = 0, Consonnes = 0; 
+    int voyelles = 0, consonnes = 0;
 
     fgets(chaine, sizeof(chaine), stdin);
 
@@ -18,17 +18,17 @@ int main()
     {
         char c = tolower(chaine[i]);
 
-        if (isalpha(c)) // on vérifie d'abord que c'est une lettre
+        if (isalpha(c))
         {
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y')
-                Voyelles++;
+                voyelles++;
             else
-                Consonnes++;
+                consonnes++;
         }
     }
 
-    printf("Voyelles : %d\n", Voyelles);
-    printf("Consonnes : %d\n", Consonnes);
-    
+    printf("Voyelles : %d\n", voyelles);
+    printf("Consonnes : %d\n", consonnes);
+
     return 0;
 }
