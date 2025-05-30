@@ -1,27 +1,25 @@
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 
 int main() {
-
-    char chaine[100];
+    char str[] = "Hello Codeloccol!";
     int voyelles = 0, consonnes = 0;
+    char c;
 
-    fgets(chaine, sizeof(chaine), stdin);
+    for (int i = 0; str[i] != '\0'; i++) {
+        c = tolower(str[i]);
 
-    for (int i = 0; chaine[i] != '\0'; i++) {
-        char caractere = tolower(chaine[i]); 
-
-        if (caractere == 'a' || caractere == 'e' || caractere == 'i' || caractere == 'o' || caractere == 'u' || caractere == 'y') {
-            voyelles++;
-        } 
-        else if (isalpha(caractere)) {
-            consonnes++;
+        if (c >= 'a' && c <= 'z') {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
+                voyelles++;
+            } else {
+                consonnes++;
+            }
         }
     }
 
-    printf("Le nombre de voyelles : %d\n", voyelles);
-    printf("Le nombre de consonnes : %d\n", consonnes);
+    printf("Voyelles : %d\n", voyelles);
+    printf("Consonnes : %d\n", consonnes);
 
     return 0;
 }
