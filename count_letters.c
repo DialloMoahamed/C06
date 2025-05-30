@@ -2,10 +2,10 @@
 #include <string.h>
 #include <ctype.h>
 
-int main(void)
+int main()
 {
     char chaine[150];
-    int Voyelles=0,Consonnes=0; 
+    int Voyelles = 0, Consonnes = 0; 
 
     fgets(chaine, sizeof(chaine), stdin);
 
@@ -16,19 +16,18 @@ int main(void)
 
     for (int i = 0; chaine[i] != '\0'; i++)
     {
-        char chaineEnVoyelle = tolower(chaine[i]);
-        if (chaineEnVoyelle == 'a' || chaineEnVoyelle == 'e' || chaineEnVoyelle == 'i' || chaineEnVoyelle == 'o' || chaineEnVoyelle == 'u' || chaineEnVoyelle == 'y')
+        char c = tolower(chaine[i]);
+
+        if (isalpha(c)) // on vérifie d'abord que c'est une lettre
         {
-            Voyelles++;
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y')
+                Voyelles++;
+            else
+                Consonnes++;
         }
-        else if (chaineEnVoyelle >= 'a' && chaineEnVoyelle <= 'z')
-        {
-            Consonnes++;
-        }
-        
     }
 
-    printf("Voyelles : %d\n",Voyelles);
+    printf("Voyelles : %d\n", Voyelles);
     printf("Consonnes : %d\n", Consonnes);
     
     return 0;
