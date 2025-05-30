@@ -9,6 +9,11 @@ int main()
 
     fgets(chaine, sizeof(chaine), stdin);
 
+    size_t len = strlen(chaine);
+    if (len > 0 && chaine[len - 1] == '\n') {
+        chaine[len - 1] = '\0';
+    }
+
     for (int i = 0; chaine[i] != '\0'; i++)
     {
         char chaineEnVoyelle = tolower(chaine[i]);
@@ -23,7 +28,8 @@ int main()
         
     }
 
-    printf("Voyelles : %d\nConsonnes : %d\n",Voyelles, Consonnes);
+    printf("Voyelles : %d\n",Voyelles);
+    printf("Consonnes : %d\n", Consonnes);
     
     return 0;
 }
