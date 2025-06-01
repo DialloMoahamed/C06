@@ -1,20 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    char str[1000];
+    char tab[100];
     int i = 0;
     int voyelles = 0;
     int consonnes = 0;
     char c;
 
     // lit toute la ligne jusqu'au retour à la ligne
-    fgets(str, sizeof(str), stdin); 
+    fgets(tab, sizeof(tab), stdin); 
 
-    while (str[i] != '\0') {
-        c = str[i];
+    while (tab[i] != '\0') {
+        c = tab[i];
 
         if (c == '\n') {
-            str[i] = '\0';
+            tab[i] = '\0';
             break;
         }
         // Convertir manuellement en minuscule si besoin
@@ -35,8 +35,8 @@ int main() {
         i++;
     }
 
-    printf("Nombre de voyelles : %d\n", voyelles);
-    printf("Nombre de consonnes : %d\n", consonnes);
+    printf("Voyelles : %d\n", voyelles);
+    printf("Consonnes : %d\n", consonnes);
 
     return 0;
 }
