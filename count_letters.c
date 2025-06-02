@@ -10,13 +10,12 @@ int main() {
 
     fgets(chaine, sizeof(chaine), stdin);
 
-    // Supprimer le caractère de nouvelle ligne potentiellement ajouté par fgets
     chaine[strcspn(chaine, "\n")] = 0;
 
     for (i = 0; chaine[i] != '\0'; i++) {
-        char caractere = tolower(chaine[i]); // Convertir en minuscule pour simplifier la comparaison
+        char caractere = tolower(chaine[i]);
 
-        if (isalpha(caractere)) { // Vérifier si le caractère est une lettre
+        if (isalpha(caractere)) {
             if (caractere == 'a' || caractere == 'e' || caractere == 'i' || caractere == 'o' || caractere == 'u' || caractere == 'y') {
                 voyelles++;
             } else {
