@@ -8,7 +8,6 @@ int main() {
     int consonnes = 0;
     int i;
 
-    printf("Entrez une chaîne de caractères : ");
     fgets(chaine, sizeof(chaine), stdin);
 
     // Supprimer le caractère de nouvelle ligne potentiellement ajouté par fgets
