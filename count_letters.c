@@ -1,31 +1,41 @@
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 
 int main() {
-    char chaine[100];
-    int voyelles = 0;
-    int consonnes = 0;
-    int i;
+    char chaine[100];              // Tableau pour stocker la chaîne
+    int voyelles = 0;              // Compteur de voyelles
+    int consonnes = 0;             // Compteur de consonnes
+    int i = 0;                     // Index pour parcourir la chaîne
+    char c;                        // Caractère temporaire
 
-    fgets(chaine, sizeof(chaine), stdin);
+    // Lire une ligne complète (avec espaces), jusqu'à la fin de ligne
+    scanf("%[^\n]", chaine);
 
-    chaine[strcspn(chaine, "\n")] = 0;
+    // Parcourir la chaîne caractère par caractère
+    while (chaine[i] != '\0') {
+        c = chaine[i];
 
-    for (i = 0; chaine[i] != '\0'; i++) {
-        char caractere = tolower(chaine[i]);
+        // Convertir en minuscule si c'est une majuscule
+        if (c >= 'A' && c <= 'Z') {
+            c = c + 32;
+        }
 
-        if (isalpha(caractere)) {
-            if (caractere == 'a' || caractere == 'e' || caractere == 'i' || caractere == 'o' || caractere == 'u' || caractere == 'y') {
+        // Vérifier si c'est une lettre de l'alphabet
+        if (c >= 'a' && c <= 'z') {
+            // Vérifier si c'est une voyelle
+            if (c == 'a' || c == 'e' || c == 'i' ||
+                c == 'o' || c == 'u' || c == 'y') {
                 voyelles++;
             } else {
                 consonnes++;
             }
         }
+
+        i++;
     }
 
-    printf("Voyelles: %d\n", voyelles);
-    printf("Consonnes: %d\n", consonnes);
+    // Affichage du résultat au format exact attendu
+    printf("Voyelles : %d\n", voyelles);
+    printf("Consonnes : %d\n", consonnes);
 
     return 0;
 }
