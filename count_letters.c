@@ -1,25 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    char chaine[100];              // Tableau pour stocker la chaîne
-    int voyelles = 0;              // Compteur de voyelles
-    int consonnes = 0;             // Compteur de consonnes
-    int i = 0;                     // Index pour parcourir la chaîne
-    char c;                        // Caractère temporaire
+    char c;
+    int voyelles = 0;
+    int consonnes = 0;
 
-    // Lire une ligne complète (avec espaces), jusqu'à la fin de ligne
-    scanf("%[^\n]", chaine);
+    // Lecture caractère par caractère jusqu'à '\n'
+    while (scanf("%c", &c) == 1 && c != '\n') {
 
-    // Parcourir la chaîne caractère par caractère
-    while (chaine[i] != '\0') {
-        c = chaine[i];
-
-        // Convertir en minuscule si c'est une majuscule
+        // Convertir en minuscule
         if (c >= 'A' && c <= 'Z') {
-            c = c + 32;
+            c += 32;
         }
 
-        // Vérifier si c'est une lettre de l'alphabet
+        // Vérifier si c'est une lettre
         if (c >= 'a' && c <= 'z') {
             // Vérifier si c'est une voyelle
             if (c == 'a' || c == 'e' || c == 'i' ||
@@ -29,11 +23,9 @@ int main() {
                 consonnes++;
             }
         }
-
-        i++;
     }
 
-    // Affichage du résultat au format exact attendu
+    // Affichage strict du format attendu
     printf("Voyelles : %d\n", voyelles);
     printf("Consonnes : %d\n", consonnes);
 
