@@ -26,8 +26,7 @@ int main() {
     }
 
     // Affichage strict du format attendu
-    printf("Voyelles : %d\n", voyelles);
-    printf("Consonnes : %d\n", consonnes);
+    printf("Voyelles : %d\nConsonnes : %d", voyelles, consonnes);
 
     return 0;
 }
